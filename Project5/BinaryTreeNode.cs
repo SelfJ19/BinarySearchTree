@@ -13,19 +13,24 @@ namespace Project5
 {
     public class BinaryTreeNode<T> : TreeNode<T>
     {
-        public BinaryTreeNode() => Children =
-            new List<TreeNode<T>>() { null, null };
+        #region Attributes
+        public BinaryTreeNode() => Children = new List<TreeNode<T>>() { null, null };
+        #endregion
 
+        #region Left
         public BinaryTreeNode<T> Left
         {
             get { return (BinaryTreeNode<T>)Children[0]; }
             set { Children[0] = value; }
         }
+        #endregion
 
+        #region Right
         public BinaryTreeNode<T> Right
         {
             get { return (BinaryTreeNode<T>)Children[1]; }
             set { Children[1] = value; }
         }
+        #endregion
     }
 }

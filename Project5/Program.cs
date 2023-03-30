@@ -14,6 +14,7 @@ namespace Project5
 {
     public class Program
     {
+        #region Main()
         public static void Main(string[] args)
         {
             BinaryTree<QuizItem> tree = GetTree();
@@ -42,7 +43,9 @@ namespace Project5
                 }
             }
         }
+        #endregion
 
+        #region GetTree()
         private static BinaryTree<QuizItem> GetTree()
         {
             BinaryTree<QuizItem> tree = new BinaryTree<QuizItem>();
@@ -98,11 +101,15 @@ namespace Project5
             tree.Count = 9;
             return tree;
         }
+        #endregion
+
+        #region WriteAnswer()
         private static void WriteAnswer(string text)
         {
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine(text);
             Console.ForegroundColor = ConsoleColor.Gray;
         }
+        #endregion
     }
 }

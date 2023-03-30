@@ -13,10 +13,13 @@ namespace Project5
 {
     public class TreeNode<T>
     {
+        #region Attributes
         public T Data { get; set; }
         public TreeNode<T> Parent { get; set; }
         public List<TreeNode<T>> Children { get; set; }
+        #endregion
 
+        #region GetHeight()
         public int GetHeight()
         {
             int height = 1;
@@ -28,5 +31,6 @@ namespace Project5
             }
             return height;
         }
+        #endregion
     }
 }

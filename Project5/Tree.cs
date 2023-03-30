@@ -13,10 +13,13 @@ namespace Project5
 {
     public class BinaryTree<T>
     {
+        #region Attributes
         public BinaryTreeNode<T> Root { get; set; }
         public int Count { get; set; }
-        private void TraversePreOrder(BinaryTreeNode<T> node,
-    List<BinaryTreeNode<T>> result)
+        #endregion
+
+        #region TraversePreOrder()
+        private void TraversePreOrder(BinaryTreeNode<T> node, List<BinaryTreeNode<T>> result)
         {
             if (node != null)
             {
@@ -25,8 +28,10 @@ namespace Project5
                 TraversePreOrder(node.Right, result);
             }
         }
-        private void TraverseInOrder(BinaryTreeNode<T> node,
-    List<BinaryTreeNode<T>> result)
+        #endregion
+
+        #region TraversInOrder()
+        private void TraverseInOrder(BinaryTreeNode<T> node, List<BinaryTreeNode<T>> result)
         {
             if (node != null)
             {
@@ -35,8 +40,10 @@ namespace Project5
                 TraverseInOrder(node.Right, result);
             }
         }
-        private void TraversePostOrder(BinaryTreeNode<T> node,
-    List<BinaryTreeNode<T>> result)
+        #endregion
+
+        #region TraversePostOrder()
+        private void TraversePostOrder(BinaryTreeNode<T> node, List<BinaryTreeNode<T>> result)
         {
             if (node != null)
             {
@@ -45,6 +52,9 @@ namespace Project5
                 result.Add(node);
             }
         }
+        #endregion
+
+        #region Traverse()
         public List<BinaryTreeNode<T>> Traverse(TraversalEnum mode)
         {
             List<BinaryTreeNode<T>> nodes = new List<BinaryTreeNode<T>>();
@@ -62,15 +72,18 @@ namespace Project5
             }
             return nodes;
         }
+        #endregion
+
+        #region GetHeight()
         public int GetHeight()
         {
             int height = 0;
-            foreach (BinaryTreeNode<T> node
-                in Traverse(TraversalEnum.PREORDER))
+            foreach (BinaryTreeNode<T> node in Traverse(TraversalEnum.PREORDER))
             {
                 height = Math.Max(height, node.GetHeight());
             }
             return height;
         }
+        #endregion
     }
 }
